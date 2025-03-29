@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setIsLoading(false);
       
       if (!session) {
-        router.push('/landing');
+        router.push('/');
       } else {
         router.push('/home');
       }
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setIsLoading(false);
 
         if (event === 'SIGNED_OUT') {
-          router.push('/landing');
+          router.push('/');
         } else if (event === 'SIGNED_IN') {
           router.push('/home');
         }

@@ -1,4 +1,6 @@
+"use client"
 import Image from "next/image";
+import Link from "next/link";
 import { PiListBold } from "react-icons/pi";
 
 const LandingView = () => {
@@ -14,7 +16,7 @@ const LandingView = () => {
                 <h1 className="text-[36px] leading-[36px] font-semibold tracking-tighter">Build your <span className="text-[#00D05E]">Financial Superskills</span> with Gamified Lessons</h1>
                 <p className="text-slate-500 px-8">Master essential money skills through interactive AI lessons that make learning fun.</p>
                 <div className="w-full">
-                    <button className="bg-[#00D05E] text-white px-8 py-4 rounded-lg font-semibold">Get Started</button></div>
+                    <Link href={"/auth"} className="bg-[#00D05E] text-white px-8 py-4 rounded-lg font-semibold">Get Started</Link></div>
                 <div className="w-fit py-10">
                 <Image src={'img/image-hero.svg'} height={500} width={500} alt="image"/>
                 </div>

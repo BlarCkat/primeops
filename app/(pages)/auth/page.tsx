@@ -40,7 +40,7 @@ const AuthView = () => {
             if (error) {
                 throw error;
             }
-            router.push('/main');
+            router.push('/home');
         } catch (error:any) {
             setError(error.message)
         }

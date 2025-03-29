@@ -23,7 +23,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         if (error) throw error;
         
         if (!user) {
-          router.push('/auth');
+          router.push('/');
           return;
         }
 
