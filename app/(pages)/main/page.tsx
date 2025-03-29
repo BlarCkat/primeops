@@ -1,5 +1,6 @@
 "use client"
 
+import BottomNavigationBarComponent from "@/components/ui/BottomBar.component";
 import { supabase } from "@/lib/supabaseClient";
 import { User } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
@@ -62,12 +63,7 @@ const MainView = () => {
         <main className="h-screen w-screen">
             <h2>{user?.email}</h2>
 
-            <div className="absolute z-[9] bottom-0 left-0 bottombar flex gap-2 w-screen h-[60px] items-center justify-between px-[10vw]">
-                <PiHouseDuotone size={32}/>
-                <PiFilesDuotone size={32}/>
-                <PiCpuDuotone size={32}/>
-                <PiUserCircleDuotone size={32}/>
-            </div>
+            <BottomNavigationBarComponent/>
         </main>
         </>
      );
