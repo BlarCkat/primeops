@@ -27,7 +27,7 @@ const MainView = () => {
                 } 
             
             catch (error:any) {
-                    console.error("Error fetching user: ", error);
+                    console.error("Error fetching this user: ", error);
                     router.push('/auth')
                 }
                 finally {
