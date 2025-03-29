@@ -4,7 +4,7 @@
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
-import { PiGoogleLogoBold, PiWarningCircleDuotone } from "react-icons/pi";
+import { PiWarningCircleDuotone } from "react-icons/pi";
 
 const AuthView = () => {
 
@@ -49,16 +49,16 @@ const AuthView = () => {
         }
     }
 
-    const handleGoogleLogin = async (): Promise<void>=>{
-        try {
-            const {error} = await supabase.auth.signInWithOAuth({
-                provider: 'google',
-            });
-            if (error) throw error;
-        } catch (error:any) {
-            setError(error.message)
-        }
-    }
+    // const handleGoogleLogin = async (): Promise<void>=>{
+    //     try {
+    //         const {error} = await supabase.auth.signInWithOAuth({
+    //             provider: 'google',
+    //         });
+    //         if (error) throw error;
+    //     } catch (error:any) {
+    //         setError(error.message)
+    //     }
+    // }
 
     // 
 
@@ -92,19 +92,19 @@ const AuthView = () => {
 
     }
 
-    const handleGoogleSignup = async():Promise<void>=>{
-        try {
-            const {error} = await supabase.auth.signInWithOAuth({
-                provider: "google",
-                options: {
-                    redirectTo:`${window.location.origin}/auth/callback`}
-            })
+    // const handleGoogleSignup = async():Promise<void>=>{
+    //     try {
+    //         const {error} = await supabase.auth.signInWithOAuth({
+    //             provider: "google",
+    //             options: {
+    //                 redirectTo:`${window.location.origin}/auth/callback`}
+    //         })
 
-            if (error) throw error
-        } catch (error:any) {
-            setError(error.message)
-        }
-    }
+    //         if (error) throw error
+    //     } catch (error:any) {
+    //         setError(error.message)
+    //     }
+    // }
 
 
 
@@ -128,7 +128,7 @@ const AuthView = () => {
                 </div>
                 <div className="actions flex flex-col w-full gap-4">
                     <div className="w-full text-center">Don&apos;t have an account? <span className="text-blue-500" onClick={()=> setCurrentState("signup")}>Sign Up</span></div>
-                <button type="button" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-transparent rounded-lg text-white border-2 border-gray-700 font-semibold gap-4"><PiGoogleLogoBold size={20} onSubmit={handleGoogleLogin}/> Log In With Google</button>
+                {/* <button type="button" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-transparent rounded-lg text-white border-2 border-gray-700 font-semibold gap-4"><PiGoogleLogoBold size={20} onSubmit={handleGoogleLogin}/> Log In With Google</button> */}
                 <button type="submit" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-blue-500 rounded-lg text-black font-semibold" disabled={loading}>{loading ? "Loading": "Log In"}</button>
                 </div>
             </form>
@@ -155,7 +155,7 @@ const AuthView = () => {
                 </div>
                 <div className="actions flex flex-col w-full gap-4">
                 <div className="w-full text-center">Already have an account? <span className="text-blue-500" onClick={()=> setCurrentState("login")}>Log In</span></div>
-                <button type="button" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-transparent rounded-lg text-white border-2 border-gray-700 font-semibold gap-4"><PiGoogleLogoBold size={20} onSubmit={handleGoogleSignup}/> Sign Up With Google</button>
+                {/* <button type="button" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-transparent rounded-lg text-white border-2 border-gray-700 font-semibold gap-4"><PiGoogleLogoBold size={20} onSubmit={handleGoogleSignup}/> Sign Up With Google</button> */}
                 <button type="submit" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-blue-500 rounded-lg text-black font-semibold" disabled={loading}>{loading ? "Loading": "Sign Up"}</button>
                 </div>
             </form>
