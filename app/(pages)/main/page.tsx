@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import BottomNavigationBarComponent from "@/components/ui/BottomBar.component";
@@ -5,7 +6,6 @@ import { supabase } from "@/lib/supabaseClient";
 import { User } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { PiCpuDuotone, PiFilesDuotone, PiHouseDuotone, PiUserCircleDuotone } from "react-icons/pi";
 
 const MainView = () => {
     const router = useRouter();
@@ -38,14 +38,14 @@ const MainView = () => {
             fetchUser();
     }, [router])
 
-    const handleSignOut = async()=>{
-        try {
-            const {error} = await supabase.auth.signOut();
-            if (error) throw error;
-        } catch (error:any) {
-            console.error("Error Signing out", error)
-        }
-    }
+    // const handleSignOut = async()=>{
+    //     try {
+    //         const {error} = await supabase.auth.signOut();
+    //         if (error) throw error;
+    //     } catch (error:any) {
+    //         console.error("Error Signing out", error)
+    //     }
+    // }
 
     if (loading) {
         return (
