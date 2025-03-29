@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import BottomNavigationBarComponent from "@/components/ui/BottomBar.component";
@@ -40,7 +41,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   if (loading) {
     return (
       <main className="h-screen w-screen flex items-center justify-center">
-        <p>Loading...</p>
+        <p>hello {user?.email}</p>
       </main>
     );
   }
