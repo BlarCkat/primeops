@@ -2,7 +2,7 @@
 
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { PiGoogleLogoBold, PiWarningCircleDuotone } from "react-icons/pi";
 
 const AuthView = () => {
@@ -14,7 +14,18 @@ const AuthView = () => {
     const [error, setError] = useState<string | null>(null);
 
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [currentState, setCurrentState] = useState<"email" | "login">()
+    const [currentState, setCurrentState] = useState<"signup" | "login">();
+
+    useEffect(()=>{
+        setCurrentState('login');
+
+        if (currentState === "signup") {
+            setCurrentState("signup")
+        }
+        else {
+            setCurrentState("login")
+        }
+    })
 
     const handleEmailLogin = async (event: FormEvent<HTMLFormElement>)=>{
         event.preventDefault();
@@ -28,6 +39,7 @@ const AuthView = () => {
             if (error) {
                 throw error;
             }
+            router.push('/main');
         } catch (error:any) {
             setError(error.message)
         }
@@ -98,6 +110,9 @@ const AuthView = () => {
     return ( 
         <>
         <main className="h-screen w-screen px-6 py-[40px]">
+            
+            {currentState === "login" && 
+            <>
             <form onSubmit={handleEmailLogin} className="flex flex-col gap-2 justify-between items-center w-full h-full pt-6">
                 <div className="inputs w-full flex flex-col gap-4 ">
                 <h2 className="text-6xl">Log In</h2>
@@ -111,11 +126,17 @@ const AuthView = () => {
                 </div>
                 </div>
                 <div className="actions flex flex-col w-full gap-4">
+                    <div className="w-full text-center">Don&apos;t have an account? <span className="text-blue-500" onClick={()=> setCurrentState("signup")}>Sign Up</span></div>
                 <button type="button" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-transparent rounded-lg text-white border-2 border-gray-700 font-semibold gap-4"><PiGoogleLogoBold size={20} onSubmit={handleGoogleLogin}/> Log In With Google</button>
                 <button type="submit" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-blue-500 rounded-lg text-black font-semibold" disabled={loading}>{loading ? "Loading": "Log In"}</button>
                 </div>
             </form>
-            
+            </>
+            }
+
+
+            {currentState === "signup" && 
+            <>
             <form onSubmit={handleEmailSignup} className="flex flex-col gap-2 justify-between items-center w-full h-full pt-6">
                 <div className="inputs w-full flex flex-col gap-4 ">
                 <h2 className="text-6xl">Sign Up</h2>
@@ -132,10 +153,14 @@ const AuthView = () => {
                 </div>
                 </div>
                 <div className="actions flex flex-col w-full gap-4">
+                <div className="w-full text-center">Already have an account? <span className="text-blue-500" onClick={()=> setCurrentState("login")}>Log In</span></div>
                 <button type="button" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-transparent rounded-lg text-white border-2 border-gray-700 font-semibold gap-4"><PiGoogleLogoBold size={20} onSubmit={handleGoogleSignup}/> Sign Up With Google</button>
                 <button type="submit" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-blue-500 rounded-lg text-black font-semibold" disabled={loading}>{loading ? "Loading": "Sign Up"}</button>
                 </div>
             </form>
+            </>
+            }
+            
 
         </main>
         </>
