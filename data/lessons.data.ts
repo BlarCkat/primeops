@@ -22,7 +22,7 @@ export const lessonModules: Course[] = [
         level: 1,
         durationMinutes: 5,
         XPReward: 10,
-        status: "inProgress",
+        status: "notdone",
         isLocked: false,
         tags: ['beginner', 'fundamental'],
       },

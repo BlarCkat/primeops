@@ -2,9 +2,11 @@
 "use client"
 
 import { supabase } from "@/lib/supabaseClient";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
-import { PiWarningCircleDuotone } from "react-icons/pi";
+import { PiCaretLeft, PiWarningCircleDuotone } from "react-icons/pi";
 
 const AuthView = () => {
 
@@ -110,14 +112,19 @@ const AuthView = () => {
 
     return ( 
         <>
-        <main className="h-screen w-screen px-6 py-[40px]">
-            
+        <main className="h-fit w-screen px-6 pt-[20px] pb-0">
+            <nav className="h-[40px] flex justify-between items-center">
+                <Link href={'/landing'}><PiCaretLeft size={32}/></Link>
+            <Image src={'/img/logo_primary.svg'} height={32} width={64} alt=""/>
+                <Link href={''}></Link>
+            </nav>
             {currentState === "login" && 
             <>
             <form onSubmit={handleEmailLogin} className="flex flex-col gap-2 justify-between items-center w-full h-full pt-6">
-                <div className="inputs w-full flex flex-col gap-4 ">
-                <h2 className="text-6xl">Log In</h2>
-                <p>Log in your existing account to continue.</p>
+                <div className="inputs w-full flex flex-col gap-2 ">
+                <Image src={'/img/image-auth.svg'} height={400} width={400} alt=""/>
+                <h2 className="text-2xl font-semibold">Welcome Back! 👋</h2>
+                <p>Log in to continue your journey to smarter money moves and bigger rewards. </p>
                 {error && <><p className="p-2 w-full bg-red-500/50 text-white h-[40px] rounded-lg flex items-center"><PiWarningCircleDuotone size={20}/>{error}</p></>}
                 <div className="border-slate-800 border-2 rounded-lg w-full">
                     <input type="text" placeholder="Email Address" id="emailAddress" className="border-none p-4 w-full outline-none" value={email} onChange={(event)=> setEmail(event.target.value)} required/>
@@ -129,7 +136,7 @@ const AuthView = () => {
                 <div className="actions flex flex-col w-full gap-4">
                     <div className="w-full text-center">Don&apos;t have an account? <span className="text-blue-500" onClick={()=> setCurrentState("signup")}>Sign Up</span></div>
                 {/* <button type="button" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-transparent rounded-lg text-white border-2 border-gray-700 font-semibold gap-4"><PiGoogleLogoBold size={20} onSubmit={handleGoogleLogin}/> Log In With Google</button> */}
-                <button type="submit" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-blue-500 rounded-lg text-black font-semibold" disabled={loading}>{loading ? "Loading": "Log In"}</button>
+                <button type="submit" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-[#00D05E] rounded-lg text-white font-semibold" disabled={loading}>{loading ? "Loading": "Log In"}</button>
                 </div>
             </form>
             </>
@@ -140,8 +147,9 @@ const AuthView = () => {
             <>
             <form onSubmit={handleEmailSignup} className="flex flex-col gap-2 justify-between items-center w-full h-full pt-6">
                 <div className="inputs w-full flex flex-col gap-4 ">
-                <h2 className="text-6xl">Sign Up</h2>
-                <p>Create your account to get started.</p>
+                    <Image src={'/img/image-auth.svg'} height={400} width={400} alt="image-auth"/>
+                <h2 className="text-2xl font-semibold">Let&apos;s get you started!</h2>
+                <p>We&apos;re excited to help you level up your financial skills and earn rewards while doing it. Enter your details to begin.</p>
                 {error && <><p className="p-2 w-full bg-red-500/50 text-white h-[40px] rounded-lg flex items-center"><PiWarningCircleDuotone size={20}/>{error}</p></>}
                 <div className="border-slate-800 border-2 rounded-lg w-full">
                     <input type="text" placeholder="Email Address" id="emailAddress" className="border-none p-4 w-full outline-none" value={email} onChange={(event)=> setEmail(event.target.value)} required/>
@@ -156,7 +164,7 @@ const AuthView = () => {
                 <div className="actions flex flex-col w-full gap-4">
                 <div className="w-full text-center">Already have an account? <span className="text-blue-500" onClick={()=> setCurrentState("login")}>Log In</span></div>
                 {/* <button type="button" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-transparent rounded-lg text-white border-2 border-gray-700 font-semibold gap-4"><PiGoogleLogoBold size={20} onSubmit={handleGoogleSignup}/> Sign Up With Google</button> */}
-                <button type="submit" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-blue-500 rounded-lg text-black font-semibold" disabled={loading}>{loading ? "Loading": "Sign Up"}</button>
+                <button type="submit" className="w-full min-h-[40px] flex items-center py-4 justify-center bg-[#00D05E] rounded-lg text-white font-semibold" disabled={loading}>{loading ? "Loading": "Sign Up"}</button>
                 </div>
             </form>
             </>
