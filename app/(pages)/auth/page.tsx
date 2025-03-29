@@ -26,7 +26,7 @@ const AuthView = () => {
         else {
             setCurrentState("login")
         }
-    })
+    },[currentState])
 
     const handleEmailLogin = async (event: FormEvent<HTMLFormElement>)=>{
         event.preventDefault();
