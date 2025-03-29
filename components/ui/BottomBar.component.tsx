@@ -25,7 +25,7 @@ const Navigation: React.FC = () => {
 
   const navItems: NavItem[] = [
     { 
-      path: '/main', 
+      path: '/home', 
       label: 'Home', 
       activeIcon: PiHouseFill, 
       inactiveIcon: PiHouseDuotone 
