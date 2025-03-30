@@ -364,7 +364,7 @@ const OnboardingView = () => {
               
               <div className="w-full mt-6">
                 <button 
-                  onClick={() => router.push('/home')}
+                  onClick={() => router.push('/selectMissions')}
                   className="w-full py-3 bg-[#00D05E] rounded-lg text-white font-semibold"
                 >
                   Start Learning
