@@ -6,7 +6,7 @@ import { User } from "@supabase/supabase-js";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { PiLockFill } from "react-icons/pi";
+import { PiCoinFill, PiHeartFill, PiLightningFill, PiLockFill } from "react-icons/pi";
 import { moduleData } from "@/lib/moduleData";
 import Link from "next/link";
 
@@ -90,14 +90,19 @@ const HomeView: React.FC = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Optional welcome message or user info */}
         {user && (
-          <div className="mb-8 p-4 bg-white rounded-lg shadow">
+          <div className="fixed z-[8] top-0 left-0 h-[80px] w-full p-4 bg-white flex items-center">
             
-            <p className="text-gray-600">Hello, {user.email}</p>
+            <p className="text-gray-600 hidden">Hello, {user.email}</p>
+            <div className="w-full flex gap-4 px-4 justify-between">
+            <div className="w-full py-4 font-semibold flex gap-1"><PiLightningFill size={20} className="text-amber-500"/><p>500</p></div>
+            <div className="w-full py-4 font-semibold flex gap-1"><PiHeartFill size={20} className="text-red-500"/><p>500</p></div>
+            <div className="w-full py-4 font-semibold flex gap-1"><PiCoinFill size={20} className="text-blue-500"/><p>500</p></div>
+            </div>
           </div>
         )}
         
         {/* Modules grid layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-[70px]">
           {moduleData.map((module) => (
             <div key={module.id} className="flex flex-col items-center w-full">
               <ModuleCard
