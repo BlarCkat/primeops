@@ -5,7 +5,7 @@ import Link from "next/link"
 import type React from "react"
 
 import { useState } from "react"
-import { PiPlus } from "react-icons/pi"
+import { PiCaretLeft, PiPlus } from "react-icons/pi"
 
 export default function Home() {
   const [selectedCards, setSelectedCards] = useState<Array<CardType | null>>([null, null, null])
@@ -27,9 +27,11 @@ export default function Home() {
 
   return (
     <main className="max-w-md mx-auto bg-gray-50 min-h-screen pb-8">
-      <header className="p-4 text-center">
-        <h1 className="text-2xl font-bold text-green-500">guli</h1>
-      </header>
+      <nav className="h-[40px] flex justify-between items-center">
+                <Link href={'/landing'}><PiCaretLeft size={32}/></Link>
+            <Image src={'/img/logo_primary.svg'} height={32} width={64} alt=""/>
+                <Link href={''}></Link>
+            </nav>
 
       <div className="px-6">
         <h2 className="text-xl font-bold text-center">Take Charge of Your Finances</h2>
@@ -66,7 +68,7 @@ export default function Home() {
 
         {/* Missions section */}
         <h3 className="text-gray-500 mb-3">Missions</h3>
-        <div className="grid grid-cols-2 h-[500px] gap-4 mb-6">
+        <div className="grid grid-cols-2 h-[400px] gap-4 mb-6">
           <Card
             title="Budgeting 101"
             image={'/img/module-1.svg'}
@@ -109,12 +111,14 @@ export default function Home() {
           />
         </div>
 
+      </div>
         {/* Continue button */}
-        <Link href={'/home'} className="w-full py-3 bg-green-200 text-green-800 font-medium rounded-md">Continue</Link>
+        <div className="px-4 h-fit flex">
+        <Link href={'/home'} className="w-full py-3 bg-[#00D05E] rounded-lg text-white font-semibold text-center">Continue</Link>
+        </div>
 
         {/* Footer */}
         <div className="text-center text-xs text-gray-400 mt-4">© 2024 Prime-Ops. All rights reserved.</div>
-      </div>
     </main>
   )
 }
