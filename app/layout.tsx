@@ -3,7 +3,8 @@ import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import React from "react";
-// import { AuthProvider } from "@/contexts/Auth.context";
+import { AuthProvider } from "@/contexts/Auth.context";
+import ClientLayout from "./ClientLayout";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -39,9 +40,11 @@ export default function RootLayout({
       <body
         className={`${instrumentSans.variable}`}
       >
-        {/* <AuthProvider> */}
+        <AuthProvider>
+          <ClientLayout>
         {children}
-        {/* </AuthProvider> */}
+          </ClientLayout>
+        </AuthProvider>
         <Analytics/>
       </body>
     </html>
