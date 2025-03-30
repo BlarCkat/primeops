@@ -47,7 +47,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   }
 
   return (
-    <main className="h-screen w-screen">
+    <main className="h-screen w-screen lg:w-[500px]">
       
         
         {/* Main content */}

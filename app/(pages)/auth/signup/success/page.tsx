@@ -4,7 +4,7 @@ import { PiCheckCircleFill } from "react-icons/pi";
 const SignupSuccessView = () => {
     return ( 
         <>
-        <main className="h-screen w-screen flex flex-col gap-4 text-left p-4 items-center justify-center">
+        <main className="h-screen w-screen flex flex-col gap-4 text-left p-4 items-center justify-center lg:w-[500px]">
             <h2 className="font-semibold text-2xl">Check your email to confirm your account</h2>
             <p>We&apos;ve sent a confirmation link to your email. Click the link in your inbox to verify your account and get started!<br /> <br />
             Didn&apos;t get the email?<br /><br />

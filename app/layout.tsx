@@ -33,6 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* <div className="fixed overflow-hidden z-[100] top-0 left-0 bg-white w-screen h-screen lg:flex items-center justify-center md:hidden">
+        <p>This website cannot be accessed on desktop. Please switch to a mobile phone.</p>
+      </div> */}
       <body
         className={`${instrumentSans.variable}`}
       >

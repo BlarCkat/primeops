@@ -6,7 +6,7 @@ import { PiListBold } from "react-icons/pi";
 const LandingView = () => {
     return ( 
         <>
-        <main className="w-screen h-fit bg-white text-black">
+        <main className="w-screen h-fit bg-white text-black lg:w-[500px]">
             <nav className="nav p-4 flex justify-between items-center">
                 <div className=""><Image src={'img/logo_primary.svg'} height={32} width={68} alt="image"/></div>
                 <PiListBold size={20}/>

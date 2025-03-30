@@ -83,7 +83,7 @@ const AuthView = () => {
             const {error} = await supabase.auth.signUp({
                 email, password,
                 options: {
-                    emailRedirectTo: `${window.location.origin}/auth/callback`
+                    emailRedirectTo: `https://guli.africa/auth/callback`
                 }
             });
             if (error) throw error;
@@ -112,7 +112,7 @@ const AuthView = () => {
 
     return ( 
         <>
-        <main className="h-fit w-screen px-6 pt-[20px] pb-0">
+        <main className="h-fit w-screen px-6 pt-[20px] pb-0 lg:w-[500px]">
             <nav className="h-[40px] flex justify-between items-center">
                 <Link href={'/landing'}><PiCaretLeft size={32}/></Link>
             <Image src={'/img/logo_primary.svg'} height={32} width={64} alt=""/>
