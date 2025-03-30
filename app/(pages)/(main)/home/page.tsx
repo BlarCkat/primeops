@@ -37,7 +37,7 @@ const ModuleCard: React.FC<ModuleCardProps> = ({ color, iconSrc, locked = false,
           ) : (
             <>
               <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                {iconSrc && <Image src={iconSrc} alt={`module ${index}`} height={80} width={80}/>}
+                {iconSrc && <Image src={iconSrc} alt={`module ${index}`} height={70} width={70}/>}
               </div>
               <div className={`w-full h-[90%] bg-${color}-300 rounded-sm`}></div>
             </>

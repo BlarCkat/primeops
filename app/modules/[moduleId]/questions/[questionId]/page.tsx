@@ -42,14 +42,14 @@ const QuestionPage = () => {
     const currentModule = moduleData.find(m => m.id === moduleId);
     
     if (!currentModule || currentModule.locked) {
-      router.push('/');
+      router.push('/home');
       return;
     }
 
     const currentQuestion = currentModule.questions.find(q => q.id === questionId);
     
     if (!currentQuestion) {
-      router.push('/');
+      router.push('/home');
       return;
     }
 
@@ -68,7 +68,7 @@ const QuestionPage = () => {
       router.push(`/modules/${moduleId}/questions/${nextQuestion.id}`);
     } else {
       // If this is the last question, go back to home
-      router.push('/');
+      router.push('/home');
     }
   };
 
