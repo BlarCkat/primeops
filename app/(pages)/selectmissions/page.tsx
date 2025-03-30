@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import type React from "react"
 
 import { useState } from "react"
@@ -109,7 +110,7 @@ export default function Home() {
         </div>
 
         {/* Continue button */}
-        <button className="w-full py-3 bg-green-200 text-green-800 font-medium rounded-md">CONTINUE</button>
+        <Link href={'/home'} className="w-full py-3 bg-green-200 text-green-800 font-medium rounded-md">Continue</Link>
 
         {/* Footer */}
         <div className="text-center text-xs text-gray-400 mt-4">© 2024 Prime-Ops. All rights reserved.</div>
