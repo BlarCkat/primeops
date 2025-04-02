@@ -55,7 +55,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <div className="fixed z-[9] bottom-0 left-0 shadow-lg w-screen h-[60px] flex items-center justify-between px-[10vw]">
+    <div className="fixed z-[9] bottom-0 left-0 shadow-lg w-screen h-[60px] flex items-center justify-between px-[10vw] bg-white">
       {navItems.map((item) => {
         const active = isActive(item.path);
         const IconComponent = active ? item.activeIcon : item.inactiveIcon;

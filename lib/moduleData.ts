@@ -1,7 +1,7 @@
 export interface Module {
     id: number;
     title: string;
-    color: 'blue' | 'amber' | 'green' | 'gray';
+    color: 'green' | 'yellow' | 'purple' | 'gray';
     iconSrc?: string;
     locked: boolean;
     questions: Question[];
@@ -19,7 +19,7 @@ export interface Module {
     { 
       id: 1,
       title: "What is Income?",
-      color: 'blue', 
+      color: 'green', 
       iconSrc: '/img/module-1.svg',
       locked: false,
       questions: [
@@ -40,7 +40,7 @@ export interface Module {
     { 
       id: 2,
       title: "Earned Income: Money for Working",
-      color: 'amber', 
+      color: 'yellow', 
       iconSrc: '/img/module-2.svg',
       locked: false,
       questions: [
@@ -55,7 +55,7 @@ export interface Module {
     { 
       id: 3,
       title: "Passive Income: Money Without Working Every Day",
-      color: 'green', 
+      color: 'purple', 
       iconSrc: '/img/module-3.svg',
       locked: false,
       questions: [
@@ -70,7 +70,7 @@ export interface Module {
     { 
       id: 4,
       title: "Portfolio Income: Gains from Investments",
-      color: 'blue', 
+      color: 'yellow', 
       iconSrc: '/img/module-1.svg',
       locked: false,
       questions: [
@@ -85,7 +85,7 @@ export interface Module {
     { 
       id: 5,
       title: "Business Income: Profits After Expenses",
-      color: 'blue', 
+      color: 'green', 
       iconSrc: '/img/module-3.svg',
       locked: false,
       questions: [

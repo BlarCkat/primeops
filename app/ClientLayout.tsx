@@ -4,10 +4,6 @@ import type React from "react"
 
 import { useEffect, useState } from "react"
 
-import { Inter } from "next/font/google"
-
-const inter = Inter({ subsets: ["latin"] })
-
 export default function ClientLayout({
   children,
 }: Readonly<{
@@ -33,7 +29,7 @@ export default function ClientLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={''}>
         {isMobile ? (
           children
         ) : (

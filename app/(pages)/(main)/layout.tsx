@@ -41,7 +41,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   if (loading) {
     return (
       <main className="h-screen w-screen flex items-center justify-center">
-        <p>hello there {user?.email}</p>
+        <p>Loading... {user?.email}</p>
       </main>
     );
   }

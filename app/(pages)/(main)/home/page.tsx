@@ -12,7 +12,7 @@ import Link from "next/link";
 
 // Types
 interface ModuleCardProps {
-  color: 'blue' | 'amber' | 'green' | 'gray';
+  color: 'green' | 'yellow' | 'purple' | 'gray';
   iconSrc?: string;
   locked?: boolean;
   index: number;
